@@ -76,7 +76,7 @@ def layers(vgg_layer3_out, vgg_layer4_out, vgg_layer7_out, num_classes):
                                                            strides=2,
                                                            padding='same',
                                                            kernel_initializer=kernel_initializer,
-                                                           # kernel_regularizer=tf.contrib.layers.l2_regularizer(l2reg),
+                                                           kernel_regularizer=tf.contrib.layers.l2_regularizer(l2reg),
                                                            name='conv_1x1_upsampled_layer7')
     ##layer4
     conv_1x1_layer4 = tf.layers.conv2d(vgg_layer4_out, filters=num_classes,
